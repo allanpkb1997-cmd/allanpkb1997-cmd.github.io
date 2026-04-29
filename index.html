@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rei dos Achadinhos Brasil</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #ffde32 0%, #ffc400 45%, #fff4b0 100%);
+      color: #111;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 460px;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 28px;
+      padding: 28px 22px 24px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+      text-align: center;
+      border: 2px solid rgba(255, 255, 255, 0.75);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #12a538;
+      color: #fff;
+      padding: 9px 15px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      box-shadow: 0 6px 14px rgba(18, 165, 56, 0.28);
+    }
+
+    .logo {
+      width: 116px;
+      height: 116px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #16d944 0%, #07982d 72%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 18px rgba(255,255,255,0.35), 0 8px 24px rgba(0,0,0,0.22);
+      border: 5px solid #111;
+      font-size: 64px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 9vw, 48px);
+      line-height: 0.92;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    h1 span {
+      color: #0aa236;
+      display: block;
+      text-shadow: 0 3px 0 rgba(255,255,255,0.8);
+    }
+
+    .subtitle {
+      font-size: 17px;
+      line-height: 1.35;
+      max-width: 360px;
+      margin: 0 auto 22px;
+      font-weight: 700;
+    }
+
+    .benefits {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      padding: 12px 14px;
+      border-radius: 16px;
+      font-size: 15px;
+      font-weight: 700;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    }
+
+    .benefit .icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #fff3b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 32px;
+      font-size: 18px;
+    }
+
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 64px;
+      border-radius: 18px;
+      background: #09a936;
+      color: #fff;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 900;
+      text-transform: uppercase;
+      box-shadow: 0 10px 0 #057d28, 0 18px 28px rgba(9, 169, 54, 0.34);
+      margin-bottom: 16px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .cta:active {
+      transform: translateY(5px);
+      box-shadow: 0 5px 0 #057d28, 0 10px 18px rgba(9, 169, 54, 0.28);
+    }
+
+    .trust {
+      font-size: 13px;
+      line-height: 1.35;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .footer-note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #555;
+    }
+
+    @media (max-width: 360px) {
+      body {
+        padding: 14px 10px;
+      }
+
+      .page {
+        padding: 22px 16px 20px;
+        border-radius: 22px;
+      }
+
+      .logo {
+        width: 96px;
+        height: 96px;
+        font-size: 52px;
+      }
+
+      .cta {
+        font-size: 19px;
+        min-height: 58px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="badge">💬 GRUPO GRATUITO NO WHATSAPP</div>
+
+    <div class="logo" aria-label="Logo Rei dos Achadinhos">👑</div>
+
+    <h1>Rei dos <span>Achadinhos</span></h1>
+
+    <p class="subtitle">
+      Achados, ofertas e cupons do Mercado Livre direto no WhatsApp.
+    </p>
+
+    <section class="benefits" aria-label="Benefícios do grupo">
+      <div class="benefit"><span class="icon">🔥</span> Promoções selecionadas todos os dias</div>
+      <div class="benefit"><span class="icon">🏷️</span> Cupons e ofertas reais quando disponíveis</div>
+      <div class="benefit"><span class="icon">🔕</span> Grupo silencioso: só os admins postam</div>
+    </section>
+
+    <a class="cta" href="https://chat.whatsapp.com/LSihkdecPKW2g0qkbdzDbC" target="_blank" rel="noopener noreferrer">
+      Entrar no grupo →
+    </a>
+
+    <p class="trust">
+      Clique no botão acima e entre gratuitamente no grupo.
+    </p>
+
+    <p class="footer-note">
+      Página independente de ofertas. As promoções podem mudar conforme disponibilidade do Mercado Livre.
+    </p>
+  </main>
+</body>
+</html>
