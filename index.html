@@ -4,19 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#FFE600" />
-  <title>Rei dos Achadinhos Brasil</title>
+  <title>Rei dos Achadinhos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800;900&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --yellow: #ffe600;
-      --yellow-deep: #ffcc00;
+      --ml-yellow: #ffe600;
+      --ml-yellow-dark: #f4c400;
       --green: #00a650;
-      --green-dark: #008f45;
-      --blue: #3483fa;
-      --ink: #1f2633;
-      --muted: #606b7b;
-      --card: #fffdf4;
-      --white: #ffffff;
-      --shadow: 0 18px 42px rgba(34, 31, 10, 0.16);
+      --green-dark: #007a3d;
+      --black: #111111;
+      --soft-black: #252525;
+      --gray: #666666;
+      --light: #ffffff;
+      --card: #fffdf7;
+      --line: rgba(0, 0, 0, 0.08);
+      --shadow: 0 22px 60px rgba(18, 18, 18, 0.18);
     }
 
     * {
@@ -32,17 +38,18 @@
 
     body {
       min-height: 100vh;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      color: var(--ink);
+      font-family: "Poppins", Arial, Helvetica, sans-serif;
+      color: var(--black);
       background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.72), transparent 34%),
-        linear-gradient(135deg, var(--yellow) 0%, var(--yellow-deep) 48%, #fff3a5 100%);
+        radial-gradient(circle at 12% 12%, rgba(255,255,255,.62), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(255,255,255,.35), transparent 26%),
+        linear-gradient(135deg, var(--ml-yellow) 0%, #ffd400 48%, #fff1a8 100%);
       display: grid;
       place-items: center;
-      padding: 18px 14px;
+      padding: 18px 12px;
     }
 
-    .wrap {
+    .page {
       width: min(100%, 410px);
     }
 
@@ -50,433 +57,467 @@
       position: relative;
       overflow: hidden;
       background: var(--card);
-      border: 1px solid rgba(255, 255, 255, 0.78);
-      border-radius: 28px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,.85);
       box-shadow: var(--shadow);
-      padding: 22px 20px 18px;
+      padding: 24px 20px 20px;
       text-align: center;
     }
 
     .card::before {
       content: "";
       position: absolute;
-      inset: 0 0 auto 0;
-      height: 7px;
-      background: linear-gradient(90deg, var(--yellow), var(--blue), var(--green));
+      top: 0;
+      left: 50%;
+      width: 92%;
+      height: 6px;
+      transform: translateX(-50%);
+      border-radius: 0 0 999px 999px;
+      background: linear-gradient(90deg, var(--ml-yellow), var(--green));
     }
 
-    .top-pill {
+    .top-label {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       min-height: 34px;
-      padding: 7px 14px;
+      padding: 7px 15px;
       border-radius: 999px;
-      color: var(--white);
+      color: #fff;
       background: var(--green);
-      box-shadow: 0 8px 20px rgba(0, 166, 80, 0.26);
+      box-shadow: 0 10px 25px rgba(0,166,80,.25);
       font-size: 12px;
-      line-height: 1;
       font-weight: 900;
-      letter-spacing: .25px;
       text-transform: uppercase;
-      margin: 10px 0 14px;
-    }
-
-    .whatsapp-dot {
-      width: 17px;
-      height: 17px;
-      display: inline-grid;
-      place-items: center;
-      border-radius: 50%;
-      background: rgba(255,255,255,.18);
-      flex: 0 0 auto;
-    }
-
-    .brand-mark {
-      width: 82px;
-      height: 82px;
-      margin: 0 auto 13px;
-      border-radius: 24px;
-      display: grid;
-      place-items: center;
-      background:
-        radial-gradient(circle at 30% 20%, #36e57b 0%, #00a650 45%, #007a3d 100%);
-      border: 4px solid #15191f;
-      box-shadow: 0 12px 22px rgba(0,0,0,.16), inset 0 2px 12px rgba(255,255,255,.24);
-      transform: rotate(-2deg);
-    }
-
-    .brand-mark svg {
-      width: 54px;
-      height: 54px;
-      filter: drop-shadow(0 3px 0 rgba(0,0,0,.24));
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      color: var(--blue);
-      background: rgba(52, 131, 250, 0.1);
-      border: 1px solid rgba(52, 131, 250, 0.16);
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 12px;
-      font-weight: 850;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      max-width: 340px;
-      margin: 0 auto 7px;
-      font-size: clamp(33px, 8vw, 45px);
-      line-height: .9;
-      letter-spacing: -1.4px;
-      text-transform: uppercase;
-      font-weight: 950;
-    }
-
-    h1 .top {
-      display: block;
-      color: #111827;
-    }
-
-    h1 .bottom {
-      display: block;
-      color: var(--green);
-      text-shadow: 0 3px 0 #ffffff;
-    }
-
-    .subtitle {
-      max-width: 325px;
-      margin: 0 auto 15px;
-      color: #18202d;
-      font-size: 15px;
-      line-height: 1.25;
-      font-weight: 760;
-    }
-
-    .proof-line {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 750;
-      margin-bottom: 13px;
-    }
-
-    .proof-line span {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
+      letter-spacing: .2px;
+      margin: 6px 0 16px;
       white-space: nowrap;
     }
 
-    .benefits {
-      display: grid;
-      gap: 9px;
-      margin-bottom: 16px;
-      text-align: left;
+    .top-label svg {
+      width: 17px;
+      height: 17px;
+      flex: 0 0 auto;
     }
 
-    .benefit {
-      display: grid;
-      grid-template-columns: 34px 1fr;
-      align-items: center;
-      min-height: 48px;
-      gap: 10px;
-      background: var(--white);
-      border: 1px solid rgba(31, 38, 51, 0.06);
-      border-radius: 16px;
-      padding: 9px 11px;
-      box-shadow: 0 6px 16px rgba(18, 24, 33, 0.07);
-      font-size: 13.5px;
-      font-weight: 780;
-    }
-
-    .benefit-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
+    .brand-icon {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 13px;
+      border-radius: 50%;
       display: grid;
       place-items: center;
-      background: #fff4bf;
+      background: radial-gradient(circle at 35% 25%, #20d65d 0%, #009a38 58%, #00792e 100%);
+      border: 5px solid #161616;
+      box-shadow: 0 10px 22px rgba(0,0,0,.18), inset 0 3px 14px rgba(255,255,255,.22);
     }
 
-    .benefit-icon svg {
-      width: 20px;
-      height: 20px;
+    .brand-icon svg {
+      width: 59px;
+      height: 59px;
+      filter: drop-shadow(0 3px 0 rgba(0,0,0,.28));
+    }
+
+    .brand-name {
+      margin: 0 auto 6px;
+      max-width: 330px;
+      font-weight: 900;
+      line-height: .98;
+      letter-spacing: -1.5px;
+      text-transform: none;
+    }
+
+    .brand-name .line-one {
+      display: block;
+      font-size: clamp(36px, 9vw, 46px);
+      color: var(--black);
+    }
+
+    .brand-name .line-two {
+      display: block;
+      font-size: clamp(38px, 9.8vw, 49px);
+      color: var(--black);
+    }
+
+    .group-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 31px;
+      padding: 5px 22px;
+      border-radius: 999px;
+      background: var(--ml-yellow);
+      color: var(--black);
+      font-size: 17px;
+      line-height: 1;
+      font-weight: 700;
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,.10);
+      margin-bottom: 16px;
+    }
+
+    .main-offer {
+      font-size: clamp(25px, 6vw, 31px);
+      line-height: 1.08;
+      font-weight: 500;
+      color: #222;
+      margin-bottom: 13px;
+    }
+
+    .main-offer strong {
+      display: block;
+      font-weight: 900;
+      color: #111;
+    }
+
+    .underline {
+      width: 70px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--ml-yellow);
+      margin: -5px auto 15px;
+    }
+
+    .benefit-icons {
+      display: flex;
+      justify-content: center;
+      gap: 13px;
+      margin-bottom: 18px;
+    }
+
+    .mini-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      box-shadow: 0 8px 18px rgba(0,166,80,.23);
+      border: 2px solid rgba(255,255,255,.75);
+    }
+
+    .mini-icon svg {
+      width: 27px;
+      height: 27px;
     }
 
     .cta {
-      position: relative;
+      width: 100%;
+      min-height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      width: 100%;
-      min-height: 58px;
-      border-radius: 18px;
-      color: var(--white);
-      background: linear-gradient(180deg, #10b84f 0%, var(--green) 100%);
+      gap: 12px;
+      border-radius: 14px;
+      color: var(--black);
+      background: linear-gradient(180deg, #ffea38 0%, var(--ml-yellow) 100%);
+      border: 1px solid rgba(0,0,0,.06);
       text-decoration: none;
-      font-size: 19px;
+      font-size: clamp(22px, 5.8vw, 29px);
       line-height: 1;
-      font-weight: 950;
-      letter-spacing: .2px;
-      text-transform: uppercase;
-      box-shadow: 0 8px 0 var(--green-dark), 0 18px 24px rgba(0, 166, 80, 0.24);
-      -webkit-tap-highlight-color: transparent;
+      font-weight: 900;
+      letter-spacing: -.6px;
+      box-shadow: 0 8px 0 var(--ml-yellow-dark), 0 16px 25px rgba(0,0,0,.12);
       user-select: none;
-    }
-
-    .cta:hover {
-      filter: brightness(1.02);
+      -webkit-tap-highlight-color: transparent;
     }
 
     .cta:active {
       transform: translateY(5px);
-      box-shadow: 0 3px 0 var(--green-dark), 0 10px 17px rgba(0, 166, 80, 0.22);
+      box-shadow: 0 3px 0 var(--ml-yellow-dark), 0 9px 17px rgba(0,0,0,.12);
     }
 
     .cta svg {
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
       flex: 0 0 auto;
     }
 
-    .cta-note {
-      margin: 13px auto 0;
-      color: #222b37;
-      font-size: 12.5px;
-      line-height: 1.3;
-      font-weight: 720;
+    .private-line {
+      margin-top: 15px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #5f5f5f;
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 500;
     }
 
-    .fine-print {
+    .private-line svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .safe-note {
+      max-width: 330px;
       margin: 10px auto 0;
-      max-width: 340px;
-      color: var(--muted);
-      font-size: 10.5px;
-      line-height: 1.3;
-      font-weight: 520;
+      color: var(--gray);
+      font-size: 11px;
+      line-height: 1.35;
+      font-weight: 500;
     }
 
-    .fine-print strong {
-      color: #3d4655;
+    .safe-note strong {
+      color: #444;
+      font-weight: 800;
     }
 
     @media (min-width: 760px) {
       body {
-        padding: 22px;
+        padding: 18px;
       }
 
-      .wrap {
-        width: 398px;
+      .page {
+        width: 390px;
       }
 
       .card {
-        padding: 20px 18px 17px;
+        padding: 21px 19px 18px;
       }
 
-      .top-pill {
-        margin-top: 8px;
+      .brand-icon {
+        width: 78px;
+        height: 78px;
+        margin-bottom: 11px;
+      }
+
+      .brand-icon svg {
+        width: 52px;
+        height: 52px;
+      }
+
+      .top-label {
+        margin-bottom: 13px;
+      }
+
+      .brand-name .line-one {
+        font-size: 39px;
+      }
+
+      .brand-name .line-two {
+        font-size: 43px;
+      }
+
+      .group-pill {
+        font-size: 15px;
+        margin-bottom: 13px;
+      }
+
+      .main-offer {
+        font-size: 27px;
+        margin-bottom: 11px;
+      }
+
+      .benefit-icons {
+        margin-bottom: 15px;
+      }
+
+      .cta {
+        min-height: 58px;
+        font-size: 26px;
       }
     }
 
-    @media (max-height: 760px) and (min-width: 720px) {
+    @media (max-height: 700px) and (min-width: 700px) {
       body {
-        align-items: start;
-        padding-top: 14px;
+        place-items: start center;
+        padding-top: 10px;
       }
 
-      .brand-mark {
-        width: 70px;
-        height: 70px;
-        margin-bottom: 10px;
+      .card {
+        padding-top: 18px;
       }
 
-      .brand-mark svg {
-        width: 46px;
-        height: 46px;
-      }
-
-      .top-pill {
+      .top-label {
         min-height: 30px;
-        padding: 6px 12px;
+        font-size: 11px;
         margin-bottom: 10px;
       }
 
-      .eyebrow, .proof-line {
-        display: none;
+      .brand-icon {
+        width: 68px;
+        height: 68px;
+        margin-bottom: 8px;
       }
 
-      h1 {
+      .brand-icon svg {
+        width: 45px;
+        height: 45px;
+      }
+
+      .brand-name .line-one {
+        font-size: 35px;
+      }
+
+      .brand-name .line-two {
         font-size: 38px;
       }
 
-      .subtitle {
+      .group-pill {
+        min-height: 27px;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .main-offer {
+        font-size: 24px;
+        margin-bottom: 9px;
+      }
+
+      .underline {
+        margin-bottom: 11px;
+      }
+
+      .benefit-icons {
         margin-bottom: 12px;
       }
 
-      .benefits {
-        gap: 8px;
-        margin-bottom: 14px;
+      .mini-icon {
+        width: 42px;
+        height: 42px;
       }
 
-      .benefit {
-        min-height: 44px;
-        padding: 8px 10px;
+      .mini-icon svg {
+        width: 24px;
+        height: 24px;
       }
 
       .cta {
         min-height: 54px;
+        font-size: 23px;
+      }
+
+      .private-line {
+        margin-top: 12px;
+        font-size: 13px;
+      }
+
+      .safe-note {
+        display: none;
       }
     }
 
     @media (max-width: 380px) {
       body {
-        padding: 12px 10px;
+        padding: 10px;
       }
 
       .card {
-        border-radius: 24px;
-        padding: 20px 15px 16px;
+        border-radius: 25px;
+        padding: 20px 15px 17px;
       }
 
-      .top-pill {
-        font-size: 11px;
+      .top-label {
+        font-size: 10.5px;
         padding-inline: 11px;
       }
 
-      .brand-mark {
+      .brand-icon {
         width: 74px;
         height: 74px;
-        border-radius: 21px;
       }
 
-      .brand-mark svg {
-        width: 48px;
-        height: 48px;
+      .brand-icon svg {
+        width: 50px;
+        height: 50px;
       }
 
-      h1 {
-        font-size: 34px;
-      }
-
-      .subtitle {
+      .group-pill {
         font-size: 14px;
       }
 
-      .proof-line {
-        flex-wrap: wrap;
+      .main-offer {
+        font-size: 24px;
       }
 
-      .benefit {
-        font-size: 13px;
+      .mini-icon {
+        width: 44px;
+        height: 44px;
       }
 
       .cta {
-        min-height: 56px;
-        font-size: 17px;
+        min-height: 58px;
       }
     }
   </style>
 </head>
 <body>
-  <main class="wrap" aria-label="Página de entrada do grupo Rei dos Achadinhos">
+  <main class="page" aria-label="Página de entrada do grupo Rei dos Achadinhos">
     <section class="card">
-      <div class="top-pill">
-        <span class="whatsapp-dot" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.04 4.2a7.72 7.72 0 0 0-6.61 11.7L4.6 19l3.2-.84a7.7 7.7 0 0 0 4.24 1.26 7.62 7.62 0 1 0 0-15.24Z" fill="white"/>
-            <path d="M9.1 8.05c-.18-.42-.37-.43-.54-.44h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.66 2.66 4.12 3.62 2.05.8 2.47.64 2.92.6.45-.04 1.45-.6 1.65-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.52-1.3-.72-1.78Z" fill="#00a650"/>
-          </svg>
-        </span>
+      <div class="top-label">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="16" cy="16" r="16" fill="#ffffff"/>
+          <path d="M16.1 7.2a8.6 8.6 0 0 0-7.35 13.05L7.8 24l3.85-1a8.6 8.6 0 1 0 4.45-15.8Z" fill="#00a650"/>
+          <path d="M12.9 11.35c-.2-.46-.42-.47-.61-.48h-.53c-.18 0-.47.07-.72.34-.25.27-.95.92-.95 2.25s.98 2.6 1.12 2.8c.14.18 1.88 2.98 4.64 4.07 2.3.9 2.77.72 3.27.67.5-.04 1.62-.67 1.85-1.31.22-.65.22-1.2.15-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.88-.9-.25-.1-.43-.14-.61.13-.18.27-.7.9-.85 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.43-2.18-1.35-.8-.72-1.35-1.6-1.5-1.88-.16-.27-.02-.42.11-.55.11-.12.27-.32.4-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.13-.59-1.45-.8-2Z" fill="#ffffff"/>
+        </svg>
         Grupo gratuito no WhatsApp
       </div>
 
-      <div class="brand-mark" aria-label="Marca Rei dos Achadinhos">
+      <div class="brand-icon" aria-label="Logo Rei dos Achadinhos">
         <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-          <path d="M18 86h84l-8 16H26l-8-16Z" fill="#f5b400" stroke="#15191f" stroke-width="6" stroke-linejoin="round"/>
-          <path d="M23 82 33 35l22 29 5-42 5 42 22-29 10 47H23Z" fill="#ffe15a" stroke="#15191f" stroke-width="6" stroke-linejoin="round"/>
-          <circle cx="33" cy="33" r="9" fill="#ffcf33" stroke="#15191f" stroke-width="5"/>
-          <circle cx="60" cy="21" r="9" fill="#ffcf33" stroke="#15191f" stroke-width="5"/>
-          <circle cx="87" cy="33" r="9" fill="#ffcf33" stroke="#15191f" stroke-width="5"/>
-          <circle cx="45" cy="74" r="6" fill="#3483fa"/>
-          <circle cx="61" cy="70" r="6" fill="#ff5a7a"/>
-          <circle cx="77" cy="74" r="6" fill="#00a650"/>
+          <path d="M24 83h72l-6.5 14.5h-59L24 83Z" fill="#ffcc00" stroke="#111" stroke-width="7" stroke-linejoin="round"/>
+          <path d="M27 79 36 37l20 29 4-43 4 43 20-29 9 42H27Z" fill="#ffe600" stroke="#111" stroke-width="7" stroke-linejoin="round"/>
+          <circle cx="36" cy="36" r="9" fill="#ffcc00" stroke="#111" stroke-width="6"/>
+          <circle cx="60" cy="23" r="9" fill="#ffcc00" stroke="#111" stroke-width="6"/>
+          <circle cx="84" cy="36" r="9" fill="#ffcc00" stroke="#111" stroke-width="6"/>
+          <path d="M33 89h54" stroke="#111" stroke-width="6" stroke-linecap="round"/>
         </svg>
       </div>
 
-      <div class="eyebrow">Achados selecionados • Mercado Livre</div>
-
-      <h1>
-        <span class="top">Rei dos</span>
-        <span class="bottom">Achadinhos</span>
+      <h1 class="brand-name">
+        <span class="line-one">Rei do</span>
+        <span class="line-two">Achadinhos</span>
       </h1>
 
-      <p class="subtitle">
-        Ofertas, cupons e promoções do Mercado Livre direto no seu WhatsApp.
-      </p>
+      <div class="group-pill">Grupo de ofertas</div>
 
-      <div class="proof-line" aria-label="Informações rápidas">
-        <span>✅ Entrada grátis</span>
-        <span>🔕 Sem conversa paralela</span>
+      <p class="main-offer">
+        Ofertas <strong>todos os dias</strong>
+      </p>
+      <div class="underline" aria-hidden="true"></div>
+
+      <div class="benefit-icons" aria-label="Benefícios do grupo">
+        <div class="mini-icon" title="Descontos" aria-label="Descontos">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 24 24 8" stroke="#ffe600" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="10" cy="10" r="4" fill="#ffe600"/>
+            <circle cx="22" cy="22" r="4" fill="#ffe600"/>
+          </svg>
+        </div>
+        <div class="mini-icon" title="Achados" aria-label="Achados">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M7 9h3l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L27 12H12" fill="none" stroke="#ffe600" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="15" cy="25" r="2.4" fill="#ffe600"/>
+            <circle cx="23" cy="25" r="2.4" fill="#ffe600"/>
+          </svg>
+        </div>
+        <div class="mini-icon" title="Promoções rápidas" aria-label="Promoções rápidas">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M18 3 7 18h8l-1 11 11-16h-8l1-10Z" fill="#ffe600" stroke="#ffe600" stroke-width="1" stroke-linejoin="round"/>
+          </svg>
+        </div>
       </div>
 
-      <section class="benefits" aria-label="Benefícios do grupo">
-        <div class="benefit">
-          <span class="benefit-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.2 21c4 0 7-2.7 7-6.6 0-3-1.7-5.2-4.6-7.5-.3 2.1-1.4 3.3-2.8 4-1.1-2.4-.9-4.7.2-7.9-3.7 2-6.9 5.7-6.9 10.8 0 4.2 3.1 7.2 7.1 7.2Z" fill="#ff6b00"/>
-              <path d="M12 20.9c2.2 0 3.8-1.5 3.8-3.6 0-1.6-.9-2.8-2.5-4-.1 1.1-.8 1.8-1.5 2.2-.6-1.3-.5-2.5.1-4.2-2 1.1-3.7 3.1-3.7 5.8 0 2.3 1.7 3.8 3.8 3.8Z" fill="#ffd54a"/>
-            </svg>
-          </span>
-          Promoções selecionadas todos os dias
-        </div>
-
-        <div class="benefit">
-          <span class="benefit-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20.2 12.5 12.5 20.2a2.2 2.2 0 0 1-3.1 0L3.8 14.6a2.2 2.2 0 0 1 0-3.1L11.5 3.8H19a1.2 1.2 0 0 1 1.2 1.2v7.5Z" fill="#3483fa"/>
-              <circle cx="16.5" cy="7.5" r="1.8" fill="white"/>
-              <path d="M8.4 13.1 12.9 8.6" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              <path d="m12.3 13.7 3.3-3.3" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </span>
-          Cupons e ofertas reais quando disponíveis
-        </div>
-
-        <div class="benefit">
-          <span class="benefit-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.5 9.5a5.5 5.5 0 0 1 11 0v3.1l1.5 3.1H5l1.5-3.1V9.5Z" fill="#00a650"/>
-              <path d="M10 18h4a2 2 0 0 1-4 0Z" fill="#007a3d"/>
-              <path d="M4 4 20 20" stroke="#ff5a7a" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
-          </span>
-          Grupo silencioso: só os admins postam
-        </div>
-      </section>
-
       <a class="cta" href="https://chat.whatsapp.com/LSihkdecPKW2g0qkbdzDbC" target="_blank" rel="noopener noreferrer" aria-label="Entrar no grupo Rei dos Achadinhos no WhatsApp">
-        Entrar no grupo
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M5 12h12" stroke="white" stroke-width="2.8" stroke-linecap="round"/>
-          <path d="m13 6 6 6-6 6" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16.1 4.8A11.1 11.1 0 0 0 6.6 21.7L5.4 26.6l5-1.3a11.1 11.1 0 1 0 5.7-20.5Z" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M12 10.6c-.22-.5-.46-.52-.67-.53h-.58c-.2 0-.52.08-.8.38-.27.3-1.05 1.02-1.05 2.48s1.08 2.87 1.23 3.06c.15.2 2.07 3.28 5.12 4.49 2.54 1 3.05.8 3.6.74.55-.05 1.79-.73 2.04-1.45.25-.71.25-1.32.17-1.45-.07-.12-.27-.2-.57-.35-.3-.15-1.79-.88-2.07-.98-.28-.1-.48-.15-.68.15-.2.3-.77.98-.95 1.18-.17.2-.35.22-.65.08-.3-.15-1.27-.47-2.4-1.49-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.47.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.65-1.6-.88-2.18Z" fill="#111"/>
         </svg>
+        Entrar no grupo
       </a>
 
-      <p class="cta-note">Clique no botão acima e entre gratuitamente no grupo.</p>
+      <div class="private-line">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="#666" stroke-width="2"/>
+          <path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Grupo privado
+      </div>
 
-      <p class="fine-print">
-        <strong>Página independente.</strong> As promoções podem mudar conforme disponibilidade, preço e estoque no Mercado Livre.
+      <p class="safe-note">
+        <strong>Página independente.</strong> As ofertas podem mudar conforme preço, estoque e disponibilidade no Mercado Livre.
       </p>
     </section>
   </main>
