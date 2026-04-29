@@ -2,27 +2,24 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#FFE600" />
-  <title>Rei dos Achadinhos</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffe600" />
+  <meta name="description" content="Entre no grupo gratuito Rei dos Achadinhos e receba ofertas selecionadas do Mercado Livre no WhatsApp." />
+  <title>Rei dos Achadinhos | Grupo de Ofertas</title>
 
   <style>
     :root {
-      --ml-yellow: #ffe600;
-      --ml-yellow-dark: #f4c400;
+      --yellow: #ffe600;
+      --yellow-2: #ffd600;
+      --yellow-3: #f4c400;
       --green: #00a650;
-      --green-dark: #007a3d;
-      --black: #111111;
-      --soft-black: #252525;
-      --gray: #666666;
-      --light: #ffffff;
-      --card: #fffdf7;
-      --line: rgba(0, 0, 0, 0.08);
-      --shadow: 0 22px 60px rgba(18, 18, 18, 0.18);
+      --green-2: #008c44;
+      --ink: #121212;
+      --muted: #5e5e5e;
+      --soft: #fffdf2;
+      --line: rgba(18, 18, 18, .10);
+      --shadow: 0 18px 46px rgba(18, 18, 18, .16);
+      --radius: 28px;
     }
 
     * {
@@ -38,289 +35,278 @@
 
     body {
       min-height: 100vh;
-      font-family: "Poppins", Arial, Helvetica, sans-serif;
-      color: var(--black);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
       background:
-        radial-gradient(circle at 12% 12%, rgba(255,255,255,.62), transparent 28%),
-        radial-gradient(circle at 88% 18%, rgba(255,255,255,.35), transparent 26%),
-        linear-gradient(135deg, var(--ml-yellow) 0%, #ffd400 48%, #fff1a8 100%);
+        radial-gradient(circle at 20% 8%, rgba(255,255,255,.72), transparent 24%),
+        radial-gradient(circle at 82% 18%, rgba(255,255,255,.42), transparent 22%),
+        linear-gradient(135deg, var(--yellow) 0%, var(--yellow-2) 52%, #fff2a9 100%);
       display: grid;
       place-items: center;
       padding: 18px 12px;
     }
 
-    .page {
-      width: min(100%, 410px);
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(100%, 430px);
     }
 
     .card {
       position: relative;
       overflow: hidden;
-      background: var(--card);
-      border-radius: 30px;
-      border: 1px solid rgba(255,255,255,.85);
+      background: var(--soft);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, .75);
       box-shadow: var(--shadow);
-      padding: 24px 20px 20px;
+      padding: 22px 20px 18px;
       text-align: center;
+      isolation: isolate;
     }
 
     .card::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 50%;
-      width: 92%;
-      height: 6px;
-      transform: translateX(-50%);
-      border-radius: 0 0 999px 999px;
-      background: linear-gradient(90deg, var(--ml-yellow), var(--green));
+      inset: 0 0 auto 0;
+      height: 7px;
+      background: linear-gradient(90deg, var(--yellow), var(--green));
+      z-index: -1;
     }
 
-    .top-label {
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      right: -108px;
+      top: 82px;
+      border-radius: 50%;
+      background: rgba(0, 166, 80, .08);
+      z-index: -1;
+    }
+
+    .eyebrow {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      min-height: 34px;
-      padding: 7px 15px;
+      min-height: 32px;
+      padding: 7px 14px;
       border-radius: 999px;
+      background: #0b0b0b;
       color: #fff;
-      background: var(--green);
-      box-shadow: 0 10px 25px rgba(0,166,80,.25);
       font-size: 12px;
-      font-weight: 900;
+      font-weight: 800;
+      letter-spacing: .18px;
       text-transform: uppercase;
-      letter-spacing: .2px;
-      margin: 6px 0 16px;
       white-space: nowrap;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .14);
     }
 
-    .top-label svg {
+    .eyebrow svg {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+    }
+
+    .logo {
+      width: 88px;
+      height: 88px;
+      margin: 18px auto 13px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #14bd5d, #008743);
+      border: 5px solid #121212;
+      box-shadow:
+        0 12px 22px rgba(0, 0, 0, .18),
+        inset 0 3px 14px rgba(255, 255, 255, .25);
+    }
+
+    .logo svg {
+      width: 60px;
+      height: 60px;
+      display: block;
+    }
+
+    .brand {
+      max-width: 360px;
+      margin: 0 auto;
+      font-size: clamp(34px, 9vw, 46px);
+      line-height: .94;
+      letter-spacing: -1.8px;
+      font-weight: 950;
+    }
+
+    .brand span {
+      display: block;
+    }
+
+    .subhead {
+      width: fit-content;
+      margin: 13px auto 12px;
+      padding: 7px 17px;
+      border-radius: 999px;
+      background: var(--yellow);
+      border: 1px solid rgba(18, 18, 18, .09);
+      box-shadow: inset 0 -2px 0 rgba(18, 18, 18, .10);
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 850;
+    }
+
+    .promise {
+      margin: 0 auto 14px;
+      max-width: 330px;
+      font-size: clamp(21px, 5.5vw, 27px);
+      line-height: 1.12;
+      font-weight: 650;
+      letter-spacing: -.5px;
+    }
+
+    .promise strong {
+      font-weight: 950;
+    }
+
+    .proof {
+      display: grid;
+      gap: 8px;
+      margin: 14px 0 18px;
+      text-align: left;
+    }
+
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 38px;
+      padding: 9px 12px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .74);
+      border: 1px solid var(--line);
+      font-size: 13.5px;
+      line-height: 1.2;
+      color: #303030;
+      font-weight: 700;
+    }
+
+    .proof-item svg {
+      width: 21px;
+      height: 21px;
+      color: var(--green);
+      flex: 0 0 auto;
+    }
+
+    .cta {
+      width: 100%;
+      min-height: 62px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #fff04a 0%, var(--yellow) 100%);
+      border: 1px solid rgba(18, 18, 18, .10);
+      box-shadow: 0 8px 0 var(--yellow-3), 0 17px 24px rgba(18, 18, 18, .14);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: clamp(21px, 5.8vw, 27px);
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -.8px;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+
+    .cta:focus-visible {
+      outline: 3px solid rgba(0, 166, 80, .45);
+      outline-offset: 4px;
+    }
+
+    .cta:active {
+      transform: translateY(5px);
+      box-shadow: 0 3px 0 var(--yellow-3), 0 10px 18px rgba(18, 18, 18, .12);
+    }
+
+    .cta svg {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 auto;
+    }
+
+    .trust {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.25;
+      font-weight: 650;
+    }
+
+    .trust svg {
       width: 17px;
       height: 17px;
       flex: 0 0 auto;
     }
 
-    .brand-icon {
-      width: 88px;
-      height: 88px;
-      margin: 0 auto 13px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: radial-gradient(circle at 35% 25%, #20d65d 0%, #009a38 58%, #00792e 100%);
-      border: 5px solid #161616;
-      box-shadow: 0 10px 22px rgba(0,0,0,.18), inset 0 3px 14px rgba(255,255,255,.22);
-    }
-
-    .brand-icon svg {
-      width: 59px;
-      height: 59px;
-      filter: drop-shadow(0 3px 0 rgba(0,0,0,.28));
-    }
-
-    .brand-name {
-      margin: 0 auto 6px;
-      max-width: 330px;
-      font-weight: 900;
-      line-height: .98;
-      letter-spacing: -1.5px;
-      text-transform: none;
-    }
-
-    .brand-name .line-one {
-      display: block;
-      font-size: clamp(36px, 9vw, 46px);
-      color: var(--black);
-    }
-
-    .brand-name .line-two {
-      display: block;
-      font-size: clamp(38px, 9.8vw, 49px);
-      color: var(--black);
-    }
-
-    .group-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 31px;
-      padding: 5px 22px;
-      border-radius: 999px;
-      background: var(--ml-yellow);
-      color: var(--black);
-      font-size: 17px;
-      line-height: 1;
-      font-weight: 700;
-      box-shadow: inset 0 -2px 0 rgba(0,0,0,.10);
-      margin-bottom: 16px;
-    }
-
-    .main-offer {
-      font-size: clamp(25px, 6vw, 31px);
-      line-height: 1.08;
-      font-weight: 500;
-      color: #222;
-      margin-bottom: 13px;
-    }
-
-    .main-offer strong {
-      display: block;
-      font-weight: 900;
-      color: #111;
-    }
-
-    .underline {
-      width: 70px;
-      height: 5px;
-      border-radius: 999px;
-      background: var(--ml-yellow);
-      margin: -5px auto 15px;
-    }
-
-    .benefit-icons {
-      display: flex;
-      justify-content: center;
-      gap: 13px;
-      margin-bottom: 18px;
-    }
-
-    .mini-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--green);
-      box-shadow: 0 8px 18px rgba(0,166,80,.23);
-      border: 2px solid rgba(255,255,255,.75);
-    }
-
-    .mini-icon svg {
-      width: 27px;
-      height: 27px;
-    }
-
-    .cta {
-      width: 100%;
-      min-height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      border-radius: 14px;
-      color: var(--black);
-      background: linear-gradient(180deg, #ffea38 0%, var(--ml-yellow) 100%);
-      border: 1px solid rgba(0,0,0,.06);
-      text-decoration: none;
-      font-size: clamp(22px, 5.8vw, 29px);
-      line-height: 1;
-      font-weight: 900;
-      letter-spacing: -.6px;
-      box-shadow: 0 8px 0 var(--ml-yellow-dark), 0 16px 25px rgba(0,0,0,.12);
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .cta:active {
-      transform: translateY(5px);
-      box-shadow: 0 3px 0 var(--ml-yellow-dark), 0 9px 17px rgba(0,0,0,.12);
-    }
-
-    .cta svg {
-      width: 32px;
-      height: 32px;
-      flex: 0 0 auto;
-    }
-
-    .private-line {
-      margin-top: 15px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: #5f5f5f;
-      font-size: 15px;
-      line-height: 1;
-      font-weight: 500;
-    }
-
-    .private-line svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .safe-note {
-      max-width: 330px;
+    .note {
+      max-width: 350px;
       margin: 10px auto 0;
-      color: var(--gray);
-      font-size: 11px;
+      color: #6d6d6d;
+      font-size: 10.8px;
       line-height: 1.35;
       font-weight: 500;
     }
 
-    .safe-note strong {
-      color: #444;
+    .note strong {
+      color: #3f3f3f;
       font-weight: 800;
     }
 
-    @media (min-width: 760px) {
+    @media (min-width: 720px) {
       body {
         padding: 18px;
       }
 
-      .page {
-        width: 390px;
+      .wrap {
+        width: 405px;
       }
 
       .card {
-        padding: 21px 19px 18px;
+        padding: 21px 20px 18px;
       }
 
-      .brand-icon {
-        width: 78px;
-        height: 78px;
-        margin-bottom: 11px;
+      .logo {
+        width: 80px;
+        height: 80px;
+        margin-top: 16px;
+        margin-bottom: 12px;
       }
 
-      .brand-icon svg {
-        width: 52px;
-        height: 52px;
+      .logo svg {
+        width: 55px;
+        height: 55px;
       }
 
-      .top-label {
-        margin-bottom: 13px;
+      .brand {
+        font-size: 41px;
       }
 
-      .brand-name .line-one {
-        font-size: 39px;
-      }
-
-      .brand-name .line-two {
-        font-size: 43px;
-      }
-
-      .group-pill {
-        font-size: 15px;
-        margin-bottom: 13px;
-      }
-
-      .main-offer {
-        font-size: 27px;
-        margin-bottom: 11px;
-      }
-
-      .benefit-icons {
-        margin-bottom: 15px;
+      .proof {
+        margin-bottom: 17px;
       }
 
       .cta {
         min-height: 58px;
-        font-size: 26px;
       }
     }
 
-    @media (max-height: 700px) and (min-width: 700px) {
+    @media (max-height: 690px) and (min-width: 700px) {
       body {
         place-items: start center;
         padding-top: 10px;
@@ -330,173 +316,139 @@
         padding-top: 18px;
       }
 
-      .top-label {
-        min-height: 30px;
+      .eyebrow {
+        min-height: 29px;
         font-size: 11px;
-        margin-bottom: 10px;
       }
 
-      .brand-icon {
+      .logo {
         width: 68px;
         height: 68px;
-        margin-bottom: 8px;
+        margin: 12px auto 9px;
+        border-width: 4px;
       }
 
-      .brand-icon svg {
-        width: 45px;
-        height: 45px;
+      .logo svg {
+        width: 47px;
+        height: 47px;
       }
 
-      .brand-name .line-one {
+      .brand {
         font-size: 35px;
       }
 
-      .brand-name .line-two {
-        font-size: 38px;
-      }
-
-      .group-pill {
-        min-height: 27px;
-        font-size: 14px;
-        margin-bottom: 10px;
-      }
-
-      .main-offer {
-        font-size: 24px;
-        margin-bottom: 9px;
-      }
-
-      .underline {
-        margin-bottom: 11px;
-      }
-
-      .benefit-icons {
-        margin-bottom: 12px;
-      }
-
-      .mini-icon {
-        width: 42px;
-        height: 42px;
-      }
-
-      .mini-icon svg {
-        width: 24px;
-        height: 24px;
-      }
-
-      .cta {
-        min-height: 54px;
-        font-size: 23px;
-      }
-
-      .private-line {
-        margin-top: 12px;
+      .subhead {
+        margin: 10px auto 9px;
+        padding: 6px 15px;
         font-size: 13px;
       }
 
-      .safe-note {
+      .promise {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      .proof {
+        gap: 6px;
+        margin: 10px 0 13px;
+      }
+
+      .proof-item {
+        min-height: 34px;
+        padding: 7px 11px;
+        font-size: 12.5px;
+      }
+
+      .cta {
+        min-height: 53px;
+        font-size: 23px;
+      }
+
+      .trust {
+        margin-top: 12px;
+      }
+
+      .note {
         display: none;
       }
     }
 
-    @media (max-width: 380px) {
+    @media (max-width: 360px) {
       body {
         padding: 10px;
       }
 
       .card {
-        border-radius: 25px;
-        padding: 20px 15px 17px;
+        border-radius: 23px;
+        padding: 19px 15px 16px;
       }
 
-      .top-label {
+      .eyebrow {
         font-size: 10.5px;
         padding-inline: 11px;
       }
 
-      .brand-icon {
-        width: 74px;
-        height: 74px;
+      .brand {
+        letter-spacing: -1.4px;
       }
 
-      .brand-icon svg {
-        width: 50px;
-        height: 50px;
-      }
-
-      .group-pill {
-        font-size: 14px;
-      }
-
-      .main-offer {
-        font-size: 24px;
-      }
-
-      .mini-icon {
-        width: 44px;
-        height: 44px;
-      }
-
-      .cta {
-        min-height: 58px;
+      .proof-item {
+        font-size: 12.6px;
       }
     }
   </style>
 </head>
+
 <body>
-  <main class="page" aria-label="Página de entrada do grupo Rei dos Achadinhos">
+  <main class="wrap" aria-label="Página de entrada para o grupo Rei dos Achadinhos">
     <section class="card">
-      <div class="top-label">
+      <div class="eyebrow" aria-label="Grupo gratuito no WhatsApp">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="16" cy="16" r="16" fill="#ffffff"/>
-          <path d="M16.1 7.2a8.6 8.6 0 0 0-7.35 13.05L7.8 24l3.85-1a8.6 8.6 0 1 0 4.45-15.8Z" fill="#00a650"/>
-          <path d="M12.9 11.35c-.2-.46-.42-.47-.61-.48h-.53c-.18 0-.47.07-.72.34-.25.27-.95.92-.95 2.25s.98 2.6 1.12 2.8c.14.18 1.88 2.98 4.64 4.07 2.3.9 2.77.72 3.27.67.5-.04 1.62-.67 1.85-1.31.22-.65.22-1.2.15-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.88-.9-.25-.1-.43-.14-.61.13-.18.27-.7.9-.85 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.43-2.18-1.35-.8-.72-1.35-1.6-1.5-1.88-.16-.27-.02-.42.11-.55.11-.12.27-.32.4-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.13-.59-1.45-.8-2Z" fill="#ffffff"/>
+          <circle cx="16" cy="16" r="16" fill="#00a650"/>
+          <path d="M16.1 7.2a8.6 8.6 0 0 0-7.35 13.05L7.8 24l3.85-1a8.6 8.6 0 1 0 4.45-15.8Z" fill="#fff"/>
+          <path d="M12.9 11.35c-.2-.46-.42-.47-.61-.48h-.53c-.18 0-.47.07-.72.34-.25.27-.95.92-.95 2.25s.98 2.6 1.12 2.8c.14.18 1.88 2.98 4.64 4.07 2.3.9 2.77.72 3.27.67.5-.04 1.62-.67 1.85-1.31.22-.65.22-1.2.15-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.88-.9-.25-.1-.43-.14-.61.13-.18.27-.7.9-.85 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.43-2.18-1.35-.8-.72-1.35-1.6-1.5-1.88-.16-.27-.02-.42.11-.55.11-.12.27-.32.4-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.13-.59-1.45-.8-2Z" fill="#00a650"/>
         </svg>
         Grupo gratuito no WhatsApp
       </div>
 
-      <div class="brand-icon" aria-label="Logo Rei dos Achadinhos">
+      <div class="logo" aria-label="Logo Rei dos Achadinhos">
         <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-          <path d="M24 83h72l-6.5 14.5h-59L24 83Z" fill="#ffcc00" stroke="#111" stroke-width="7" stroke-linejoin="round"/>
-          <path d="M27 79 36 37l20 29 4-43 4 43 20-29 9 42H27Z" fill="#ffe600" stroke="#111" stroke-width="7" stroke-linejoin="round"/>
-          <circle cx="36" cy="36" r="9" fill="#ffcc00" stroke="#111" stroke-width="6"/>
-          <circle cx="60" cy="23" r="9" fill="#ffcc00" stroke="#111" stroke-width="6"/>
-          <circle cx="84" cy="36" r="9" fill="#ffcc00" stroke="#111" stroke-width="6"/>
-          <path d="M33 89h54" stroke="#111" stroke-width="6" stroke-linecap="round"/>
+          <path d="M23 80h74l-6.2 15.5H29.2L23 80Z" fill="#f6c500" stroke="#111" stroke-width="7" stroke-linejoin="round"/>
+          <path d="M28 76 36.6 38.8 54 61.8 60 24l6 37.8 17.4-23L92 76H28Z" fill="#ffe600" stroke="#111" stroke-width="7" stroke-linejoin="round"/>
+          <circle cx="36.7" cy="38.2" r="8.3" fill="#ffe600" stroke="#111" stroke-width="6"/>
+          <circle cx="60" cy="23.5" r="8.3" fill="#ffe600" stroke="#111" stroke-width="6"/>
+          <circle cx="83.3" cy="38.2" r="8.3" fill="#ffe600" stroke="#111" stroke-width="6"/>
+          <path d="M35 88h50" stroke="#111" stroke-width="6" stroke-linecap="round"/>
+          <path d="M44 76c9 5 23 5 32 0" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/>
         </svg>
       </div>
 
-      <h1 class="brand-name">
-        <span class="line-one">Rei do</span>
-        <span class="line-two">Achadinhos</span>
+      <h1 class="brand">
+        <span>Rei dos</span>
+        <span>Achadinhos</span>
       </h1>
 
-      <div class="group-pill">Grupo de ofertas</div>
+      <p class="subhead">Achados selecionados do Mercado Livre</p>
 
-      <p class="main-offer">
-        Ofertas <strong>todos os dias</strong>
+      <p class="promise">
+        Ofertas boas, diretas e <strong>sem enrolação</strong> no seu WhatsApp.
       </p>
-      <div class="underline" aria-hidden="true"></div>
 
-      <div class="benefit-icons" aria-label="Benefícios do grupo">
-        <div class="mini-icon" title="Descontos" aria-label="Descontos">
-          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M8 24 24 8" stroke="#ffe600" stroke-width="4" stroke-linecap="round"/>
-            <circle cx="10" cy="10" r="4" fill="#ffe600"/>
-            <circle cx="22" cy="22" r="4" fill="#ffe600"/>
+      <div class="proof" aria-label="Vantagens do grupo">
+        <div class="proof-item">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M5 12.5 9.2 16.7 19 6.8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
+          Promoções e cupons quando estiverem disponíveis
         </div>
-        <div class="mini-icon" title="Achados" aria-label="Achados">
-          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M7 9h3l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L27 12H12" fill="none" stroke="#ffe600" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="15" cy="25" r="2.4" fill="#ffe600"/>
-            <circle cx="23" cy="25" r="2.4" fill="#ffe600"/>
+
+        <div class="proof-item">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 7h2.8l2 9.2a2 2 0 0 0 2 1.6h5.7a2 2 0 0 0 1.9-1.4L21 9H8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="11" cy="20" r="1.6" fill="currentColor"/>
+            <circle cx="18" cy="20" r="1.6" fill="currentColor"/>
           </svg>
-        </div>
-        <div class="mini-icon" title="Promoções rápidas" aria-label="Promoções rápidas">
-          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M18 3 7 18h8l-1 11 11-16h-8l1-10Z" fill="#ffe600" stroke="#ffe600" stroke-width="1" stroke-linejoin="round"/>
-          </svg>
+          Produtos úteis para casa, rotina e presentes
         </div>
       </div>
 
@@ -508,16 +460,16 @@
         Entrar no grupo
       </a>
 
-      <div class="private-line">
+      <div class="trust">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="#666" stroke-width="2"/>
-          <path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round"/>
+          <rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        Grupo privado
+        Grupo privado e gratuito
       </div>
 
-      <p class="safe-note">
-        <strong>Página independente.</strong> As ofertas podem mudar conforme preço, estoque e disponibilidade no Mercado Livre.
+      <p class="note">
+        <strong>Página independente de afiliado.</strong> Preços, cupons, estoque e disponibilidade podem mudar no Mercado Livre.
       </p>
     </section>
   </main>
