@@ -10,6 +10,18 @@
   />
   <title>Rei dos Achadinhos | Grupo de Ofertas</title>
 
+  <!-- Google tag (gtag.js) - Google Analytics 4 -->
+  <!-- Troque G-XXXXXXXXXX pelo seu ID real do Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <style>
     :root {
       --yellow: #FFE600;
@@ -318,6 +330,7 @@
     }
   </style>
 </head>
+
 <body>
   <main class="page" aria-label="Página de entrada do grupo Rei dos Achadinhos">
     <section class="card">
@@ -376,6 +389,7 @@
       </div>
 
       <a
+        id="btn-whatsapp"
         class="cta"
         href="https://chat.whatsapp.com/LSihkdecPKW2g0qkbdzDbC"
         target="_blank"
@@ -400,5 +414,25 @@
 
     </section>
   </main>
+
+  <!-- Monitoramento de clique no botão do WhatsApp -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const btnWhatsApp = document.getElementById("btn-whatsapp");
+
+      if (btnWhatsApp) {
+        btnWhatsApp.addEventListener("click", function () {
+          if (typeof gtag === "function") {
+            gtag("event", "clique_whatsapp", {
+              event_category: "engajamento",
+              event_label: "botao_quero_entrar_no_grupo",
+              link_url: btnWhatsApp.href,
+              page_title: document.title
+            });
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
